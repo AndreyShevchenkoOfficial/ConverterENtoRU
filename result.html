@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>English to Russian Converter</title>
+  <style>
+   body {
+    background-image: url("Снимок экрана 2023-09-11 093857.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   }
+
+   .container {
+    text-align: center;
+    width: 300px;
+   }
+
+   h1 {
+    margin-bottom: 20px;
+   }
+
+   label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+   }
+
+   input[type="text"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+   }
+
+   button {
+    padding: 10px 20px;
+    font-size: 16px;
+   }
+
+   h3 {
+    margin-top: 20px;
+    font-weight: bold;
+   }
+
+   p {
+    margin-top: 10px;
+   }
+  </style>
+  <script>
+   function convertText() {
+    var replacements = {
+     q: "й",
+     w: "ц",
+     e: "у",
+     r: "к",
+     t: "е",
+     y: "н",
+     u: "г",
+     i: "ш",
+     o: "щ",
+     p: "з",
+     a: "ф",
+     s: "ы",
+     d: "в",
+     f: "а",
+     g: "п",
+     h: "р",
+     j: "о",
+     k: "л",
+     l: "д",
+     z: "я",
+     x: "ч",
+     c: "с",
+     v: "м",
+     b: "и",
+     n: "т",
+     m: "ь",
+     ",": "б",
+     ".": "ю",
+     ";": "ж",
+     "'": "э",
+     "[": "х",
+     "]": "ъ",
+    };
+    var english_text = document.getElementById("english_text").value;
+    var russian_text = "";
+    for (var i = 0; i < english_text.length; i++) {
+     var char = english_text.charAt(i);
+     if (replacements[char]) {
+      russian_text += replacements[char];
+     } else {
+      russian_text += char;
+     }
+    }
+    document.getElementById("russian_text").innerText = russian_text;
+   }
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <h1><font color="white">English to Russian Converter</font></h1>
+
+   <label for="english_text"
+    ><font color="white">Enter English Text:</font></label
+   >
+   <input type="text" id="english_text" name="english_text" />
+   <button onclick="convertText()">Convert</button>
+
+   <h3><font color="white">Russian Text:</font></h3>
+   <p style="background:#ffffff"  style="color:#000000" </p id="russian_text"></p>
+  </div>
+ </body>
+</html>
